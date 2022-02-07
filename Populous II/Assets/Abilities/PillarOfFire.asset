@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: PillarOfFire
   m_EditorClassIdentifier: 
   spell_name: Pillar of Fire
-  cooldown_time: 5
-  active_time: 5
+  cooldown_time: 3
+  spell_duration: 1
   mana_cost: 10

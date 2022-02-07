@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bf255a8db634494a9e341c9b082732b, type: 3}
   m_Name: Tornado
   m_EditorClassIdentifier: 
-  spell_name: 
-  cooldown_time: 0
-  spell_duration: 0
-  mana_cost: 0
+  spell_name: Tornado
+  cooldown_time: 8
+  spell_duration: 5
+  mana_cost: 15

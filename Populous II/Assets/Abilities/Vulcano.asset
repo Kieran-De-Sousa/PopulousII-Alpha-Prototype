@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f6ba4bb796dadf4f8c0e826481e93c5, type: 3}
   m_Name: Vulcano
   m_EditorClassIdentifier: 
-  spell_name: 
-  cooldown_time: 0
-  spell_duration: 0
-  mana_cost: 0
+  spell_name: Vulcano
+  cooldown_time: 20
+  spell_duration: 10
+  mana_cost: 100
