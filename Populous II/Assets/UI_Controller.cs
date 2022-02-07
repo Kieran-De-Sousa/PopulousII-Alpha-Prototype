@@ -41,6 +41,9 @@ public class UI_Controller : MonoBehaviour
     public Button temp4;
     public Button temp5;
     public Button temp6;
+
+    [Header("NPC Controller")] [SerializeField]
+    private NpcManager npcManager;
     
     void Start()
     {
@@ -164,7 +167,27 @@ public class UI_Controller : MonoBehaviour
 
     void heroControls(int idx)
     {
-        
+        switch (idx)
+        {
+            case 13:
+                npcManager.UpdateNPCState(NpcMovement.MoveState.NORMAL);
+                break;
+            case 14 :
+                Application.Quit(); // big ui code
+                break;
+            case 15:
+                npcManager.UpdateNPCState(NpcMovement.MoveState.FIGHT);
+                break;
+            case 16:
+                npcManager.UpdateNPCState(NpcMovement.MoveState.GATHER);
+                break;
+            case 17:
+                npcManager.UpdateNPCState(NpcMovement.MoveState.SETTLE);
+                break;
+            case 18:
+                // for magnet just click on the map
+                break;
+        }
     }
 
     void selectedButton(Button selectedButton, powerGroup previousPower)

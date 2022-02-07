@@ -35,6 +35,8 @@ public class NpcManager : MonoBehaviour
         {
             npc.SetNpcMoveState(newState);
         }
+        
+        Debug.Log("NPC state changed! New state is:" + newState);
     }
 
     // Counts the number of friendly and enemy npcs in the scene and updates the count. This is not perfomant at all
