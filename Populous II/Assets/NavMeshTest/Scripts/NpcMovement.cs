@@ -76,11 +76,19 @@ public class NpcMovement : MonoBehaviour
         currentMoveState = MoveState.NORMAL;
         SetDestination(GetNewRandomDestination());
     }
-
+    Vector3 test;
     // u p d a t e
     void Update()
     {
         Move();
+
+        // rapid alpha
+        if (transform.position == test)
+        {
+            DecideNewDestination();
+            SetDestination(GetNewRandomDestination());
+        }
+        test = transform.position;
     }
 
     // Move the NPC around
@@ -303,6 +311,4 @@ public class NpcMovement : MonoBehaviour
         isFighting = false;
         currentMoveState = MoveState.NORMAL;
     }
-
-    // Remember: only two npcs can fight at the same time!
 }
