@@ -200,11 +200,11 @@ public class UI_Controller : MonoBehaviour
         selectedButton.interactable = false;
     }
 
-    int abilityUsedDecision()
-    {
-        switch (selectedPower)
-        {
+    //int abilityUsedDecision()
+    //{
+        //switch (selectedPower)
+        //{
             
-        }
-    }
+        //}
+    //}
 }
