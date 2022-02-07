@@ -138,6 +138,26 @@ public class UI_Controller : MonoBehaviour
 
     void abilityActivation(int idx)
     {
+        switch (idx)
+        {
+            case 7:
+                break;
+            
+            case 8:
+                break;
+            
+            case 9:
+                break;
+            
+            case 10:
+                break;
+            
+            case 11:
+                break;
+            
+            case 12:
+                break;
+        }
         // Get player mana
         // If player has enough mana for ability using idx
     }
@@ -152,36 +172,39 @@ public class UI_Controller : MonoBehaviour
         switch (previousPower)
         {
             case powerGroup.PEOPLE:
-            {
                 peopleGroup.interactable = true;
                 break;
-            }
+            
             case powerGroup.VEGETATION:
-            {
                 vegetationGroup.interactable = true;
                 break;
-            }
+            
             case powerGroup.EARTH:
-            {                
                 earthGroup.interactable = true;
                 break;
-            }
+            
             case powerGroup.AIR:
-            {                
+                
                 airGroup.interactable = true;
                 break;
-            }
+            
             case powerGroup.FIRE:
-            {                
                 fireGroup.interactable = true;
                 break;
-            }
+            
             case powerGroup.WATER:
-            {                
                 waterGroup.interactable = true;
                 break;
-            }
         }
+        
         selectedButton.interactable = false;
+    }
+
+    int abilityUsedDecision()
+    {
+        switch (selectedPower)
+        {
+            
+        }
     }
 }
