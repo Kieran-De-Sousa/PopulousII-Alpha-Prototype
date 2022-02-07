@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,14 +15,17 @@ public class UI_Controller : MonoBehaviour
     public Button waterGroup;
     private enum powerGroup
     {
-        PEOPLE,
-        VEGETATION,
-        EARTH,
-        AIR,
-        FIRE,
-        WATER
+        PEOPLE = 1,
+        VEGETATION = 2,
+        EARTH = 3,
+        AIR = 4,
+        FIRE = 5,
+        WATER = 6
     };
     private powerGroup selectedPower = powerGroup.PEOPLE;
+    private powerGroup previousPower = powerGroup.WATER;
+    private Button selectedPowerGroup;
+    private Button previousPowerGroup;
     
     [Header("Ability Buttons")]
     public Button ability1;
@@ -60,40 +64,124 @@ public class UI_Controller : MonoBehaviour
         temp4.onClick.AddListener(delegate { clickedEvent(16); });
         temp5.onClick.AddListener(delegate { clickedEvent(17); });
         temp6.onClick.AddListener(delegate { clickedEvent(18); });
+
         
+        selectedPowerGroup = peopleGroup;
+        previousPowerGroup = waterGroup;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        switch (selectedPower)
+        {
+            case powerGroup.PEOPLE:
+                selectedButton(peopleGroup, previousPower);
+                break;
+            case powerGroup.VEGETATION:
+                selectedButton(vegetationGroup, previousPower);
+                break;
+            case powerGroup.EARTH:
+                selectedButton(earthGroup, previousPower);
+                break;
+            case powerGroup.AIR:
+                selectedButton(airGroup, previousPower);
+                break;
+            case powerGroup.FIRE:
+                selectedButton(fireGroup, previousPower);
+                break;
+            case powerGroup.WATER:
+                selectedButton(waterGroup, previousPower);
+                break;
+        }
     }
 
     void clickedEvent(int btnidx)
     {
         switch (btnidx)
         {
+            // Ability Groups
             case 1:
             case 2:
             case 3:
             case 4:
             case 5:
             case 6:
+                abilityGroupSelection(btnidx);
                 break;
+            // Abilities
             case 7:
             case 8:
             case 9:
             case 10:
             case 11:
             case 12:
+                abilityActivation(btnidx);
                 break;
+            // Hero Tools
             case 13:
             case 14:
             case 15:
             case 16:
             case 17:
             case 18:
+                heroControls(btnidx);
                 break;
         }
+    }
+
+    void abilityGroupSelection(int idx)
+    {
+        previousPower = selectedPower;
+        selectedPower = (powerGroup) idx;
+        Debug.Log("Power Selected: " + selectedPower);
+    }
+
+    void abilityActivation(int idx)
+    {
+        // Get player mana
+        // If player has enough mana for ability using idx
+    }
+
+    void heroControls(int idx)
+    {
+        
+    }
+
+    void selectedButton(Button selectedButton, powerGroup previousPower)
+    {
+        switch (previousPower)
+        {
+            case powerGroup.PEOPLE:
+            {
+                peopleGroup.interactable = true;
+                break;
+            }
+            case powerGroup.VEGETATION:
+            {
+                vegetationGroup.interactable = true;
+                break;
+            }
+            case powerGroup.EARTH:
+            {                
+                earthGroup.interactable = true;
+                break;
+            }
+            case powerGroup.AIR:
+            {                
+                airGroup.interactable = true;
+                break;
+            }
+            case powerGroup.FIRE:
+            {                
+                fireGroup.interactable = true;
+                break;
+            }
+            case powerGroup.WATER:
+            {                
+                waterGroup.interactable = true;
+                break;
+            }
+        }
+        selectedButton.interactable = false;
     }
 }
