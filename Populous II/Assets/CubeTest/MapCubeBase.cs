@@ -1,18 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+
+// Base class of all map cube objects
 
 public class MapCubeBase : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public virtual void ClickStart()
     {
-        
+
     }
 
-    // Update is called once per frame
-    void Update()
+    public virtual void ClickEnd()
     {
-        
+
     }
 }
