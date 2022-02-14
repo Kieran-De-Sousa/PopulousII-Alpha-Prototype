@@ -44,6 +44,10 @@ public class UI_Controller : MonoBehaviour
 
     [Header("NPC Controller")] [SerializeField]
     private NpcManager npcManager;
+
+    [Header("Spell Interface")]
+    [SerializeField]
+    public GameObject spellManager;
     
     void Start()
     {
@@ -79,21 +83,27 @@ public class UI_Controller : MonoBehaviour
         {
             case powerGroup.PEOPLE:
                 selectedButtonGroup(peopleGroup, previousPower);
+                //SelectSpell(SpellCategory::PEOPLE);
                 break;
             case powerGroup.VEGETATION:
                 selectedButtonGroup(vegetationGroup, previousPower);
+                //
                 break;
             case powerGroup.EARTH:
                 selectedButtonGroup(earthGroup, previousPower);
+                //
                 break;
             case powerGroup.AIR:
                 selectedButtonGroup(airGroup, previousPower);
+                //
                 break;
             case powerGroup.FIRE:
                 selectedButtonGroup(fireGroup, previousPower);
+                //
                 break;
             case powerGroup.WATER:
                 selectedButtonGroup(waterGroup, previousPower);
+                //
                 break;
         }
     }
@@ -109,15 +119,32 @@ public class UI_Controller : MonoBehaviour
     {
         switch (btnidx)
         {
-            // Ability Groups
+            // Ability Groups (UGLY CODE)
             case 1:
-            case 2:
-            case 3:
-            case 4:
-            case 5:
-            case 6:
+                spellManager.GetComponent<SpellManager>().SelectSpell(SpellManager.SpellGroup.PEOPLE);
                 abilityGroupSelection(btnidx);
                 break;
+            case 2:
+                spellManager.GetComponent<SpellManager>().SelectSpell(SpellManager.SpellGroup.VEGETATION);
+                abilityGroupSelection(btnidx);
+                break;
+            case 3:
+                spellManager.GetComponent<SpellManager>().SelectSpell(SpellManager.SpellGroup.EARTH);
+                abilityGroupSelection(btnidx);
+                break;
+            case 4:
+                spellManager.GetComponent<SpellManager>().SelectSpell(SpellManager.SpellGroup.AIR);
+                abilityGroupSelection(btnidx);
+                break;
+            case 5:
+                spellManager.GetComponent<SpellManager>().SelectSpell(SpellManager.SpellGroup.WATER);
+                abilityGroupSelection(btnidx);
+                break;
+            case 6:
+                spellManager.GetComponent<SpellManager>().SelectSpell(SpellManager.SpellGroup.FIRE);
+                abilityGroupSelection(btnidx);
+                break;
+
             // Abilities
             case 7:
             case 8:
@@ -320,7 +347,7 @@ public class UI_Controller : MonoBehaviour
         switch (heroButtonIdx)
         {
             case 13:
-                Application.Quit(); // big ui code
+                /// TURN SPELL SELECTION OFF
                 break;
             case 14 :
                 npcManager.UpdateNPCState(NpcMovement.MoveState.NORMAL);
