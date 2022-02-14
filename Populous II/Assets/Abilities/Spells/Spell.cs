@@ -18,7 +18,7 @@ public class Spell : ScriptableObject
         return mana_cost;
     }
 
-    public virtual void Activate()
+    public virtual void Activate(Vector3 mouse_pos)
     {
         Debug.Log(spell_name);
     }

@@ -17,9 +17,9 @@ public class SpellCategory : ScriptableObject
         //}
     }
 
-    public void Activate (int spell_level)
+    public void Activate (int spell_level, Vector3 mouse_pos)
     {
         Debug.Log("Spell " + cat_name +" level " + spell_level + " is cast");
-        spells[spell_level].Activate();
+        spells[spell_level].Activate(mouse_pos);
     }
 }
