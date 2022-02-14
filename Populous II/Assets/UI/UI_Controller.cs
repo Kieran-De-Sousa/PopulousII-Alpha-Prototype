@@ -341,7 +341,8 @@ public class UI_Controller : MonoBehaviour
     }
 
     /// <summary>
-    /// 
+    /// Disables interactability on selected power group button
+    /// Renables interactability on previous power group button
     /// </summary>
     /// <param name="selectedPowerGroup"></param>
     /// <param name="previousPowerGroup"></param>
@@ -377,6 +378,11 @@ public class UI_Controller : MonoBehaviour
         selectedPowerGroup.interactable = false;
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="powerGroupButton"></param>
+    /// <returns></returns>
     int abilityGroupActive(powerGroup powerGroupButton)
     {
         switch (powerGroupButton)
