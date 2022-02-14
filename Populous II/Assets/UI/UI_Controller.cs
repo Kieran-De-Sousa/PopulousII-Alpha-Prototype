@@ -44,6 +44,10 @@ public class UI_Controller : MonoBehaviour
 
     [Header("NPC Controller")] [SerializeField]
     private NpcManager npcManager;
+
+    [Header("Spell Interface")]
+    [SerializeField]
+    public GameObject spellManager;
     
     void Start()
     {
@@ -78,28 +82,42 @@ public class UI_Controller : MonoBehaviour
         switch (selectedPower)
         {
             case powerGroup.PEOPLE:
-                selectedButton(peopleGroup, previousPower);
+                selectedButtonGroup(peopleGroup, previousPower);
+                //SelectSpell(SpellCategory::PEOPLE);
                 break;
             case powerGroup.VEGETATION:
-                selectedButton(vegetationGroup, previousPower);
+                selectedButtonGroup(vegetationGroup, previousPower);
+                //
                 break;
             case powerGroup.EARTH:
-                selectedButton(earthGroup, previousPower);
+                selectedButtonGroup(earthGroup, previousPower);
+                //
                 break;
             case powerGroup.AIR:
-                selectedButton(airGroup, previousPower);
+                selectedButtonGroup(airGroup, previousPower);
+                //
                 break;
             case powerGroup.FIRE:
-                selectedButton(fireGroup, previousPower);
+                selectedButtonGroup(fireGroup, previousPower);
+                //
                 break;
             case powerGroup.WATER:
-                selectedButton(waterGroup, previousPower);
+                selectedButtonGroup(waterGroup, previousPower);
+                //
                 break;
         }
     }
 
+    /// <summary>
+    /// Triggered whenever a button is clicked
+    /// btnidx 1-6   = Ability Group Button
+    /// btnidx 7-12  = Ability Button
+    /// btnidx 13-18 = Hero Related Button
+    /// </summary>
+    /// <param name="btnidx"></param>
     void clickedEvent(int btnidx)
     {
+        SpellManager.SpellGroup group = (SpellManager.SpellGroup)btnidx - 1;
         switch (btnidx)
         {
             // Ability Groups
@@ -109,8 +127,10 @@ public class UI_Controller : MonoBehaviour
             case 4:
             case 5:
             case 6:
+                spellManager.GetComponent<SpellManager>().SelectSpell(group);
                 abilityGroupSelection(btnidx);
                 break;
+
             // Abilities
             case 7:
             case 8:
@@ -118,8 +138,10 @@ public class UI_Controller : MonoBehaviour
             case 10:
             case 11:
             case 12:
+                spellManager.GetComponent<SpellManager>().SelectSpellLevel(btnidx - 6);
                 abilityActivation(btnidx);
                 break;
+
             // Hero Tools
             case 13:
             case 14:
@@ -139,41 +161,184 @@ public class UI_Controller : MonoBehaviour
         Debug.Log("Power Selected: " + selectedPower);
     }
 
-    void abilityActivation(int idx)
+    /// <summary>
+    /// Decides which ability to activate based on button clicked
+    /// Calls function within spell script
+    /// </summary>
+    ///<param name="abilityNumber"></param>
+    void abilityActivation(int abilityNumber)
     {
-        switch (idx)
+        // Save ability group used
+        int abilityGroup = abilityGroupActive(selectedPower);
+
+        // Decide which ability button was clicked
+        switch (abilityNumber)
         {
+            // Ability 1
             case 7:
+                switch (abilityGroup)
+                {
+                    // People Group- Ability 1
+                    case 1:
+                        break;
+                    // Vegetation Group - Ability 1
+                    case 2:
+                        break;
+                    // Earth Group - Ability 1
+                    case 3:
+                        break;
+                    // Air Group - Ability 1
+                    case 4:
+                        break;
+                    // Fire Group - Ability 1
+                    case 5:
+                        break;
+                   // Water Group - Ability 1
+                    case 6:
+                        break;
+                }
+
                 break;
             
+            // Ability 2
             case 8:
+                switch (abilityGroup)
+                {
+                    // People Group- Ability 2
+                    case 1:
+                        break;
+                    // Vegetation Group - Ability 2
+                    case 2:
+                        break;
+                    // Earth Group- Ability 2
+                    case 3:
+                        break;
+                    // Air Group - Ability 2
+                    case 4:
+                        break;
+                    // Fire Group - Ability 2
+                    case 5:
+                        break;
+                    // Water Group - Ability 2
+                    case 6:
+                        break;
+                }
+
                 break;
             
+            // Ability 3
             case 9:
+                switch (abilityGroup)
+                {
+                    // People Group- Ability 3
+                    case 1:
+                        break;
+                    // Vegetation Group - Ability 3
+                    case 2:
+                        break;
+                    // Earth Group- Ability 3
+                    case 3:
+                        break;
+                    // Air Group - Ability 3
+                    case 4:
+                        break;
+                    // Fire Group - Ability 3
+                    case 5:
+                        break;
+                    // Water Group - Ability 3
+                    case 6:
+                        break;
+                }
+
                 break;
             
+            // Ability 4
             case 10:
+                switch (abilityGroup)
+                {
+                    // People Group- Ability 4
+                    case 1:
+                        break;
+                    // Vegetation Group - Ability 4
+                    case 2:
+                        break;
+                    // Earth Group- Ability 4
+                    case 3:
+                        break;
+                    // Air Group - Ability 4
+                    case 4:
+                        break;
+                    // Fire Group - Ability 4
+                    case 5:
+                        break;
+                   // Water Group - Ability 4
+                    case 6:
+                        break;
+                }
+
                 break;
             
+            // Ability 5
             case 11:
+                switch (abilityGroup)
+                {
+                    // People Group- Ability 5
+                    case 1:
+                        break;
+                    // Vegetation Group - Ability 5
+                    case 2:
+                        break;
+                    // Earth Group- Ability 5
+                    case 3:
+                        break;
+                    // Air Group - Ability 5
+                    case 4:
+                        break;
+                    // Fire Group - Ability 5
+                    case 5:
+                        break;
+                   // Water Group - Ability 5
+                    case 6:
+                        break;
+                }
                 break;
             
+            // Ability 6
             case 12:
+                switch (abilityGroup)
+                {
+                    // People Group- Ability 6
+                    case 1:
+                        break;
+                    // Vegetation Group - Ability 6
+                    case 2:
+                        break;
+                    // Earth Group- Ability 6
+                    case 3:
+                        break;
+                    // Air Group - Ability 6
+                    case 4:
+                        break;
+                    // Fire Group - Ability 6
+                    case 5:
+                        break;
+                   // Water Group - Ability 6
+                    case 6:
+                        break;
+                }
                 break;
         }
-        // Get player mana
-        // If player has enough mana for ability using idx
     }
 
-    void heroControls(int idx)
+    void heroControls(int heroButtonIdx)
     {
-        switch (idx)
+        switch (heroButtonIdx)
         {
             case 13:
-                npcManager.UpdateNPCState(NpcMovement.MoveState.NORMAL);
+                /// TURN SPELL SELECTION OFF
                 break;
             case 14 :
-                Application.Quit(); // big ui code
+                npcManager.UpdateNPCState(NpcMovement.MoveState.NORMAL);
                 break;
             case 15:
                 npcManager.UpdateNPCState(NpcMovement.MoveState.FIGHT);
@@ -185,49 +350,74 @@ public class UI_Controller : MonoBehaviour
                 npcManager.UpdateNPCState(NpcMovement.MoveState.SETTLE);
                 break;
             case 18:
-                // for magnet just click on the map
+                // For magnet just click on the map
                 break;
         }
     }
 
-    void selectedButton(Button selectedButton, powerGroup previousPower)
+    /// <summary>
+    /// Disables interactability on selected power group button
+    /// Renables interactability on previous power group button
+    /// </summary>
+    /// <param name="selectedPowerGroup"></param>
+    /// <param name="previousPowerGroup"></param>
+    void selectedButtonGroup(Button selectedPowerGroup, powerGroup previousPowerGroup)
     {
-        switch (previousPower)
+        switch (abilityGroupActive(previousPowerGroup))
         {
-            case powerGroup.PEOPLE:
+            case 1:
                 peopleGroup.interactable = true;
                 break;
             
-            case powerGroup.VEGETATION:
+            case 2:
                 vegetationGroup.interactable = true;
                 break;
             
-            case powerGroup.EARTH:
+            case 3:
                 earthGroup.interactable = true;
                 break;
             
-            case powerGroup.AIR:
-                
+            case 4:
                 airGroup.interactable = true;
                 break;
             
-            case powerGroup.FIRE:
+            case 5:
                 fireGroup.interactable = true;
                 break;
             
-            case powerGroup.WATER:
+            case 6:
                 waterGroup.interactable = true;
                 break;
         }
         
-        selectedButton.interactable = false;
+        selectedPowerGroup.interactable = false;
     }
 
-    //int abilityUsedDecision()
-    //{
-        //switch (selectedPower)
-        //{
-            
-        //}
-    //}
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="powerGroupButton"></param>
+    /// <returns></returns>
+    int abilityGroupActive(powerGroup powerGroupButton)
+    {
+        switch (powerGroupButton)
+        {
+            case powerGroup.PEOPLE:
+                return 1;
+            case powerGroup.VEGETATION:
+                return 2;
+            case powerGroup.EARTH:
+                return 3;
+            case powerGroup.AIR:
+                return 4;
+            case powerGroup.FIRE:
+                return 5;
+            case powerGroup.WATER:
+                return 6;
+
+            // Code broke.
+            default:
+                return 0;
+        }
+    }
 }
