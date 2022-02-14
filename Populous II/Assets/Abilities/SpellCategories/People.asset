@@ -9,10 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f6ba4bb796dadf4f8c0e826481e93c5, type: 3}
-  m_Name: Vulcano
+  m_Script: {fileID: 11500000, guid: c2d41a31615f09a4680659259ad510d2, type: 3}
+  m_Name: People
   m_EditorClassIdentifier: 
-  spell_name: Vulcano
-  cooldown_time: 20
-  spell_duration: 10
-  mana_cost: 100
+  spells:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

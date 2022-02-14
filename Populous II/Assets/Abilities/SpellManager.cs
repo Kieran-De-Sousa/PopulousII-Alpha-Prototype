@@ -37,6 +37,8 @@ public class SpellManager : MonoBehaviour
 
     public void CastSpell()
     {
+        //SpellGroup group = (SpellGroup)spell_level;
+
         switch (spell_selected)
         {
             case SpellGroup.PEOPLE:
