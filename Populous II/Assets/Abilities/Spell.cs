@@ -11,6 +11,7 @@ public class Spell : ScriptableObject
     public string spell_name;
     public float cooldown_time;
     public float spell_duration;
+    public SpellEffect spell_effect;
     public int mana_cost;
     SpellState state = SpellState.READY;
 
