@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2d41a31615f09a4680659259ad510d2, type: 3}
   m_Name: Fire
   m_EditorClassIdentifier: 
+  cat_name: Fire
   spells:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 8ac146a024ffe2a4789c078f54fa7d20, type: 2}
+  - {fileID: 11400000, guid: fcead9037a325bb4385069635b14bb85, type: 2}
+  - {fileID: 11400000, guid: e504aa912d8e36c47ac034fd8cbe634f, type: 2}
+  - {fileID: 11400000, guid: 3b3184131382b5d418e927ad95149d88, type: 2}
+  - {fileID: 11400000, guid: f357a570e3e9ae546ab0689c2f617740, type: 2}

@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2d41a31615f09a4680659259ad510d2, type: 3}
   m_Name: Air
   m_EditorClassIdentifier: 
+  cat_name: Air
   spells:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 31cad553e82c7a94d98f8b2ac742f4c5, type: 2}
+  - {fileID: 11400000, guid: 129dd6dc676f2be4cb4fbde1c9c48561, type: 2}
+  - {fileID: 11400000, guid: 3a99e0c8e3eb9d24b8f131bbc35ab758, type: 2}
+  - {fileID: 11400000, guid: bb950fb3f70595a4c930729015669e91, type: 2}
+  - {fileID: 11400000, guid: fbfd9c81d43c98545b342fda62bae055, type: 2}

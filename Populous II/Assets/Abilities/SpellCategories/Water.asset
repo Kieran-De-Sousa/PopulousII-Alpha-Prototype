@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2d41a31615f09a4680659259ad510d2, type: 3}
   m_Name: Water
   m_EditorClassIdentifier: 
+  cat_name: Water
   spells:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 8a21b97dc6ad31f4bbfda4a4bccbe37f, type: 2}
+  - {fileID: 11400000, guid: 719093541925c0041ac2849b5a5bb021, type: 2}
+  - {fileID: 11400000, guid: 2eca025acddc507408caf65863d4c0dd, type: 2}
+  - {fileID: 11400000, guid: 236e08ac2e8fffc48bd6f8b30066010e, type: 2}
+  - {fileID: 11400000, guid: e1e3b71c51367774e9b1b6f8ebaaf129, type: 2}

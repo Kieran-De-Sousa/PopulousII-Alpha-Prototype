@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2d41a31615f09a4680659259ad510d2, type: 3}
   m_Name: People
   m_EditorClassIdentifier: 
+  cat_name: People
   spells:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 731450e4f2996f449953315e64b3bb5e, type: 2}
+  - {fileID: 11400000, guid: bc642429ac0d63d4593db6f8edeb5dc2, type: 2}
+  - {fileID: 11400000, guid: 5296d3d903377a44c96c3a3a3a9758fc, type: 2}
+  - {fileID: 11400000, guid: 3beaab6a8c180054f8dcb4f5aa877c9b, type: 2}
+  - {fileID: 11400000, guid: 24c9a146b9ba1e34e8d4eee13a45312e, type: 2}

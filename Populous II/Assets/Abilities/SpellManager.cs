@@ -19,10 +19,10 @@ public class SpellManager : MonoBehaviour
 
     void Update()
     {
-        foreach(SpellCategory spell in spell_categories)
-        {
-            spell.Update();
-        }
+        //foreach(SpellCategory spell in spell_categories)
+        //{
+        //    spell.Update();
+        //}
     }
 
     public void SelectSpell(SpellGroup category)

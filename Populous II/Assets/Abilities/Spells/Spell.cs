@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[CreateAssetMenu]
 public class Spell : ScriptableObject
 {
     public string spell_name;
@@ -19,7 +20,7 @@ public class Spell : ScriptableObject
 
     public virtual void Activate()
     {
-        // The code here should instantiate a SpellEffect game object.
+        Debug.Log(spell_name);
     }
 }
 

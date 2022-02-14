@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2d41a31615f09a4680659259ad510d2, type: 3}
   m_Name: Vegetation
   m_EditorClassIdentifier: 
+  cat_name: Vegetation
   spells:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 4c15800d30c4fdc41bfae3069f5743a7, type: 2}
+  - {fileID: 11400000, guid: 16994918836688d4b9a4c4115a53df29, type: 2}
+  - {fileID: 11400000, guid: 1269192768b276247958a7f7d8eafc1f, type: 2}
+  - {fileID: 11400000, guid: 80ccb3ee2acb3c941b740279758e0417, type: 2}
+  - {fileID: 11400000, guid: 5bec48c4b07bc5f4fae656ecce212db6, type: 2}
