@@ -117,59 +117,31 @@ public class UI_Controller : MonoBehaviour
     /// <param name="btnidx"></param>
     void clickedEvent(int btnidx)
     {
+        SpellManager.SpellGroup group = (SpellManager.SpellGroup)btnidx - 1;
         switch (btnidx)
         {
-            // Ability Groups (UGLY CODE)
+            // Ability Groups
             case 1:
-                spellManager.GetComponent<SpellManager>().SelectSpell(SpellManager.SpellGroup.PEOPLE);
-                abilityGroupSelection(btnidx);
-                break;
             case 2:
-                spellManager.GetComponent<SpellManager>().SelectSpell(SpellManager.SpellGroup.VEGETATION);
-                abilityGroupSelection(btnidx);
-                break;
             case 3:
-                spellManager.GetComponent<SpellManager>().SelectSpell(SpellManager.SpellGroup.EARTH);
-                abilityGroupSelection(btnidx);
-                break;
             case 4:
-                spellManager.GetComponent<SpellManager>().SelectSpell(SpellManager.SpellGroup.AIR);
-                abilityGroupSelection(btnidx);
-                break;
             case 5:
-                spellManager.GetComponent<SpellManager>().SelectSpell(SpellManager.SpellGroup.WATER);
-                abilityGroupSelection(btnidx);
-                break;
             case 6:
-                spellManager.GetComponent<SpellManager>().SelectSpell(SpellManager.SpellGroup.FIRE);
+                spellManager.GetComponent<SpellManager>().SelectSpell(group);
                 abilityGroupSelection(btnidx);
                 break;
 
             // Abilities
             case 7:
-                spellManager.GetComponent<SpellManager>().SelectSpellLevel(1);
-                abilityActivation(btnidx);
-                break;
             case 8:
-                spellManager.GetComponent<SpellManager>().SelectSpellLevel(2);
-                abilityActivation(btnidx);
-                break;
             case 9:
-                spellManager.GetComponent<SpellManager>().SelectSpellLevel(3);
-                abilityActivation(btnidx);
-                break;
             case 10:
-                spellManager.GetComponent<SpellManager>().SelectSpellLevel(4);
-                abilityActivation(btnidx);
-                break;
             case 11:
-                spellManager.GetComponent<SpellManager>().SelectSpellLevel(5);
-                abilityActivation(btnidx);
-                break;
             case 12:
-                spellManager.GetComponent<SpellManager>().SelectSpellLevel(6);
+                spellManager.GetComponent<SpellManager>().SelectSpellLevel(btnidx - 6);
                 abilityActivation(btnidx);
                 break;
+
             // Hero Tools
             case 13:
             case 14:
