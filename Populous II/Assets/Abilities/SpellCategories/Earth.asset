@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2d41a31615f09a4680659259ad510d2, type: 3}
   m_Name: Earth
   m_EditorClassIdentifier: 
+  cat_name: Earth
   spells:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 80a6244a0678d7b4ea15b4935a1d51c1, type: 2}
+  - {fileID: 11400000, guid: e9a11ee330ae1be4183f04cae2adf94b, type: 2}
+  - {fileID: 11400000, guid: a32eabdf78be85b47bd522ecf1fd3c25, type: 2}
+  - {fileID: 11400000, guid: b17ce5609d2555e4bbce1dc68ac6b8d3, type: 2}
+  - {fileID: 11400000, guid: d5e6da2144174814c9bfe96f0a52cf74, type: 2}
