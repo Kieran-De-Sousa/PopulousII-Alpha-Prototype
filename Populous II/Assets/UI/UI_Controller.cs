@@ -147,11 +147,27 @@ public class UI_Controller : MonoBehaviour
 
             // Abilities
             case 7:
+                spellManager.GetComponent<SpellManager>().SelectSpellLevel(1);
+                abilityActivation(btnidx);
+                break;
             case 8:
+                spellManager.GetComponent<SpellManager>().SelectSpellLevel(2);
+                abilityActivation(btnidx);
+                break;
             case 9:
+                spellManager.GetComponent<SpellManager>().SelectSpellLevel(3);
+                abilityActivation(btnidx);
+                break;
             case 10:
+                spellManager.GetComponent<SpellManager>().SelectSpellLevel(4);
+                abilityActivation(btnidx);
+                break;
             case 11:
+                spellManager.GetComponent<SpellManager>().SelectSpellLevel(5);
+                abilityActivation(btnidx);
+                break;
             case 12:
+                spellManager.GetComponent<SpellManager>().SelectSpellLevel(6);
                 abilityActivation(btnidx);
                 break;
             // Hero Tools
