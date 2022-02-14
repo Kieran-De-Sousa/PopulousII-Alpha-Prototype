@@ -8,7 +8,7 @@ public class PapalMagnet : MonoBehaviour
     // Checks for left mouse button input
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetKeyDown(KeyCode.P))
         {
             // Get the click position
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -16,8 +16,9 @@ public class PapalMagnet : MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
 
             // Check that we actually clicked the map
-            if (hit.collider != null && hit.collider.CompareTag(TagManager.MAP_TAG))
+            if (hit.collider != null && hit.collider.CompareTag("Map"))
             {
+                Debug.Log("magnet called");
                 UsePapalMagnet(mousePos2D);
             }
         }

@@ -57,15 +57,6 @@ public class Colosseum : MonoBehaviour
         redTeamNextSeat = numberOfCollosseumSeats - 1;
     }
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Q)) AddColosseumSeat(Team.BLUE);
-        if (Input.GetKeyDown(KeyCode.W)) AddColosseumSeat(Team.RED);
-
-        if (Input.GetKeyDown(KeyCode.E)) RemoveColosseumSeat(Team.BLUE);
-        if (Input.GetKeyDown(KeyCode.R)) RemoveColosseumSeat(Team.RED);
-    }
-
     public void AddColosseumSeat(Team team)
     {
         switch (team)

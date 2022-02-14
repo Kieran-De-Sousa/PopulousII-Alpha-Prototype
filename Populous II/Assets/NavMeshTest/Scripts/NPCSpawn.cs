@@ -14,9 +14,8 @@ public class NPCSpawn : MonoBehaviour
     {
         for(int i = 0; i < spawnPop; i++)
         {
-            NpcMovement NPC = Instantiate(player).GetComponent<NpcMovement>();
+            NpcMovement NPC = Instantiate(player, new Vector2(Random.Range(-100, 100), Random.Range(-50, 50)), Quaternion.identity).GetComponent<NpcMovement>();
             NPC.Setup(FindObjectOfType<NpcManager>(), Random.Range(0,2) == 0 ? NpcMovement.NpcType.FRIENDLY : NpcMovement.NpcType.ENEMY, topmap, botmap);
-            NPC.transform.position = NPC.GetNewRandomDestination();
         }
     }
 
