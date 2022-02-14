@@ -1,34 +1,61 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SpellManager : MonoBehaviour
 {
-    public Spell[] spells = new Spell[3];
-    public KeyCode[] keys = new KeyCode[3];
+    public enum SpellGroup : int
+    {
+        PEOPLE = 0,
+        VEGETATION = 1,
+        EARTH = 2,
+        AIR = 3,
+        WATER = 4,
+        FIRE =5,
+        NONE = 6
+    }
+
+    private SpellGroup spell_selected;
+    public SpellCategory[] spell_categories = new SpellCategory[6];
 
     void Update()
     {
-        foreach(Spell spell in spells)
+        foreach(SpellCategory spell in spell_categories)
         {
             spell.Update();
         }
+    }
 
-        int key_index = 0;
-        foreach (KeyCode key in keys)
-        {           
-            if (Input.GetKeyDown(key))
-            {
-                if (spells[key_index].IsActive())
-                {
-                    spells[key_index].Activate();
-                }
-                else
-                {
-                    Debug.Log(spells[key_index] + " spell is on cooldown");
-                }
-            }
-            ++key_index;
+    public void SelectSpell(SpellGroup category)
+    {
+        spell_selected = category;
+    }
+
+    public void CastSpell(int spell_level)
+    {
+        switch (spell_selected)
+        {
+            case SpellGroup.PEOPLE:
+                spell_categories[0].Activate(spell_level);
+                break;
+            case SpellGroup.VEGETATION:
+                spell_categories[1].Activate(spell_level);
+                break;
+            case SpellGroup.EARTH:
+                spell_categories[2].Activate(spell_level);
+                break;
+            case SpellGroup.AIR:
+                spell_categories[3].Activate(spell_level);
+                break;
+            case SpellGroup.WATER:
+                spell_categories[4].Activate(spell_level);
+                break;
+            case SpellGroup.FIRE:
+                spell_categories[5].Activate(spell_level);
+                break;
+            case SpellGroup.NONE:
+                Debug.Log("No spells selected");
+                break;
+            default:
+                break;
         }
     }
 }
