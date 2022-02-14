@@ -38,6 +38,7 @@ public class NpcMovement : MonoBehaviour
     NavMeshAgent agent;
 
     NpcManager npcManager;
+    Colosseum colosseum;
 
     void Start()
     {
@@ -47,6 +48,9 @@ public class NpcMovement : MonoBehaviour
             // Setup (has to be done here because this data also is passed in when the npc is instantiated) 
             Setup(FindObjectOfType<NpcManager>(), npcType, groundMap, wallMap);
         }
+
+        colosseum = FindObjectOfType<Colosseum>();
+        colosseum.AddColosseumSeat(npcType == NpcType.FRIENDLY ? Colosseum.Team.BLUE : Colosseum.Team.RED);
     }
 
     // Sets intial values for the NPC. Also called from NpcManager when a new NPC is instantiated
