@@ -13,11 +13,22 @@ EditorUserSettings:
       flags: 0
     RecentlyUsedScenePath-2:
       value: 22424703114646680e0b0227036c72111f1958072926337e38271427fb
+<<<<<<< Updated upstream
       flags: 0
     RecentlyUsedScenePath-3:
       value: 22424703114646680e0b0227036c6a3922120b3e623d28393930
       flags: 0
     RecentlyUsedScenePath-4:
+=======
+      flags: 0
+    RecentlyUsedScenePath-3:
+      value: 22424703114646680e0b0227036c6a3922120b3e623d28393930
+      flags: 0
+    RecentlyUsedScenePath-4:
+      value: 22424703114646780c03093011175a0302583b2b212d34316d1d1820f6a0073be7e933a7f234362820
+      flags: 0
+    RecentlyUsedScenePath-5:
+>>>>>>> Stashed changes
       value: 22424703114646750c182127032b6b15050357042d3e0b353e212936f1f47a2decee22f0
       flags: 0
     vcSharedLogLevel:

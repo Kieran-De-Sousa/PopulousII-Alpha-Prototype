@@ -1,24 +1,21 @@
 using UnityEngine;
-using UnityEngine.UI;
 using System.Linq;
 using UnityEngine.Tilemaps;
 
 // Manages NPCs 5head
 public class NpcManager : MonoBehaviour
 {
-    [Header("UI")]
-    [SerializeField] Text friendlyNpcCount;
-    [SerializeField] Text enemyNpcCount;
-
     [Header("Npc Prefab")]
     [SerializeField] GameObject npc;
     [SerializeField] Tilemap groundMap;
     [SerializeField] Tilemap wallMap;
 
     NpcMovement[] npcs;
+    Colosseum colosseum;
 
     void Start()
     {
+        colosseum = FindObjectOfType<Colosseum>();
         UpdateNpcCount();
     }
 
@@ -44,20 +41,24 @@ public class NpcManager : MonoBehaviour
         int friendlyNpcs = 0;
         int enemyNpcs = 0;
 
+        colosseum.ResetColosseum();
+
         foreach (NpcMovement npc in npcs)
         {
             if (npc.GetNpcType() == NpcMovement.NpcType.FRIENDLY)
             {
                 friendlyNpcs++;
+                colosseum.AddColosseumSeat(Colosseum.Team.BLUE);
             }
             else
             {
                 enemyNpcs++;
+                colosseum.AddColosseumSeat(Colosseum.Team.RED);
             }
         }
 
-        friendlyNpcCount.text = "Friendly Npcs: " + friendlyNpcs.ToString();
-        enemyNpcCount.text = "Enemy Npcs: " + enemyNpcs.ToString();
+        // friendlyNpcCount.text = "Friendly Npcs: " + friendlyNpcs.ToString();
+        // enemyNpcCount.text = "Enemy Npcs: " + enemyNpcs.ToString();
     }
 
     // Makes a stronger npc out of two other NPCs
