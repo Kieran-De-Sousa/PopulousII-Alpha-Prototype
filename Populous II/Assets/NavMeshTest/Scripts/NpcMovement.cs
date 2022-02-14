@@ -139,7 +139,7 @@ public class NpcMovement : MonoBehaviour
     }
 
     // Gets a new random point from the tilemap
-    Vector2 GetNewRandomDestination()
+    public Vector2 GetNewRandomDestination()
     {
         float tileMapSizeX = groundMap.size.x * groundMap.cellSize.x;
         float tileMapSizeY = groundMap.size.y * groundMap.cellSize.y;
@@ -211,9 +211,15 @@ public class NpcMovement : MonoBehaviour
     }
 
     // Detects collisions between NPCs for merging and fighting
-    void OnTriggerEnter2D(Collider2D collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        NpcMovement npc = collision.GetComponent<NpcMovement>();
+        if(collision?.gameObject.tag == "Repath")
+        {
+            Debug.Log("Repath");
+ //           currentTargetDestination = GetNewRandomDestination();
+            DecideNewDestination();
+        }
+        NpcMovement npc = collision.gameObject.GetComponent<NpcMovement>();
         if (npc == null) return;
 
         if (npc.GetNpcType() == npcType)
@@ -310,5 +316,11 @@ public class NpcMovement : MonoBehaviour
 
         isFighting = false;
         currentMoveState = MoveState.NORMAL;
+    }
+    public void SetTileMap(Tilemap topmap, Tilemap botmap)
+    {
+        groundMap = botmap;
+        wallMap = topmap;
+
     }
 }

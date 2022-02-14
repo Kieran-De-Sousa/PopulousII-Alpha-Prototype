@@ -14,6 +14,11 @@ public class TileManager : MonoBehaviour
     public Vector3Int location;
     private Color tileColor;
     private Color darken = new Color(10f, 10f, 10f);
+    private TileAutomata auto;
+    private void Start()
+    {
+        auto = this.GetComponent <TileAutomata>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -29,6 +34,7 @@ public class TileManager : MonoBehaviour
             botMap.SetTile(location, greenTile);
             Debug.Log("Change to green block");
             botMap.RefreshTile(location);
+            auto.generateNavMesh();
         }
         if(Input.GetMouseButtonDown(1))
         {
@@ -41,6 +47,7 @@ public class TileManager : MonoBehaviour
             botMap.SetTile(location, waterTile);
             Debug.Log("Change to green block");
             botMap.RefreshTile(location);
+            auto.generateNavMesh();
         } 
     }
 }

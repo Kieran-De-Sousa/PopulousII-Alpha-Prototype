@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using UnityEditor;
+using UnityEngine.AI;
 
 public class TileAutomata : MonoBehaviour
 {
@@ -23,6 +24,8 @@ public class TileAutomata : MonoBehaviour
     public Tilemap botmap;
     public Tile topTile;
     public Tile botTile;
+
+    public NavMeshSurface2d[] navMesh;
 
     int width;
     int height;
@@ -117,6 +120,12 @@ public class TileAutomata : MonoBehaviour
             terrainMap = null;
         }
     }
+
+    public void generateNavMesh()
+    {
+        navMesh[0].BuildNavMesh();
+//        navMesh[1].BuildNavMesh();
+    }
     
 
 
@@ -128,6 +137,7 @@ public class TileAutomata : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Space))
         {
             doSim(numR);
+            generateNavMesh();
         }
         if(Input.GetKeyDown(KeyCode.Backspace))
         {
