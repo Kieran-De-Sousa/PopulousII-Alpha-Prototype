@@ -9,10 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bf255a8db634494a9e341c9b082732b, type: 3}
-  m_Name: Tornado
+  m_Script: {fileID: 11500000, guid: c2d41a31615f09a4680659259ad510d2, type: 3}
+  m_Name: Earth
   m_EditorClassIdentifier: 
-  spell_name: Tornado
-  cooldown_time: 8
-  spell_duration: 5
-  mana_cost: 15
+  spells:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
