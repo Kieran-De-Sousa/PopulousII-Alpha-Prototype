@@ -14,6 +14,7 @@ public class SpellManager : MonoBehaviour
     }
 
     private SpellGroup spell_selected;
+    private int spell_level = 0;
     public SpellCategory[] spell_categories = new SpellCategory[6];
 
     void Update()
@@ -29,7 +30,12 @@ public class SpellManager : MonoBehaviour
         spell_selected = category;
     }
 
-    public void CastSpell(int spell_level)
+    public void SelectSpellLevel(int level)
+    {
+        spell_level = level;
+    }
+
+    public void CastSpell()
     {
         switch (spell_selected)
         {
